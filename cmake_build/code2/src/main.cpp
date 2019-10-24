@@ -8,12 +8,8 @@
 **************************************************************************/
 
 #include <iostream>
-#include <string>
-#include <numeric>
-#include <vector>
-#include <algorithm>
 
-#include "hello.h"
+#include <hello.h>
 
 using namespace std;
 
