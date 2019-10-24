@@ -1,0 +1,2 @@
+# clib
+static  so
