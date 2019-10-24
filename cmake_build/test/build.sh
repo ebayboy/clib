@@ -11,10 +11,14 @@
 #* 
 #**************************************************************************/ 
 
+if [ $#!=2 ]; then
+	echo "Usage: ./build.sh [Release|Debug]"
+fi
+
 rm -rf ./build && mkdir ./build && cd ./build
 
-cmake ..  1>/dev/null || exit 1;
-make 1>/dev/null || exit 1;
+cmake -DCMAKE_BUILD_TYPE=$1 ..  || exit 1;
+make || exit 1;
 
 cd ../
 
