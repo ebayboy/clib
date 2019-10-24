@@ -17,8 +17,7 @@ rm ./build -rf
 mkdir ./build 
 cd ./build
 
-if (("$1"=="Release")); 
-then
+if [ "$1" = "Release" ];then
 	echo "build with Release mode!"
 else
 	echo "build with Debug mode!"

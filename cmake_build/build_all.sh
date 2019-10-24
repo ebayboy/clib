@@ -13,16 +13,22 @@
 
 rm ./main -rf
 
+if [ "$1" = "Release" ]; then
+	echo "Build with Release mode."
+else
+	echo "Build with Debug mode."
+fi
+
 #1. build libhello.so
 echo "1. building libhello.so ..."
 cd ./lib
-./build.sh 1>/dev/null  || { echo "Error: build lib error, exit!"; exit 1; };
+./build.sh $1 1>/dev/null  || { echo "Error: build lib error, exit!"; exit 1; };
 cd ../
 
 #2. build test demo
 echo "2. building test demo ..."
 cd ./test 
-./build.sh 1>/dev/null || { echo "Error: build demo error, exit!"; exit 1; };
+./build.sh $1 1>/dev/null || { echo "Error: build demo error, exit!"; exit 1; };
 cd ../
 
 #3. cp demo
