@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.0.0)
 
 SET(LIBHELLO_SRC hello.cpp)
 ADD_LIBRARY(hello SHARED ${LIBHELLO_SRC})
+ADD_LIBRARY(hello_static STATIC ${LIBHELLO_SRC})
 INSTALL(TARGETS hello hello
 LIBRARY DESTINATION lib)
 INSTALL(FILES hello.h DESTINATION include/hello)
