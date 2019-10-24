@@ -1,2 +1,2 @@
 # clib
-static  so
+use cmake create  static  so
