@@ -13,12 +13,16 @@
 
 
 #1. build libhello.so
-cd ./lib && ./build.sh
+echo "1. building libhello.so ..."
+cd ./lib && ./build.sh 1>/dev/null && cd ../
 
 #2. build test demo
-cd ./test && ./build.sh
+echo "2. building test demo ..."
+cd ./test && ./build.sh 1>/dev/null && cd ../
 
-cd ../
+cp ./test/build/src/main  . -af
+
+echo "build complete!"
 
 exit 0
 
