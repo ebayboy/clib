@@ -13,7 +13,8 @@
 
 rm -rf ./build && mkdir ./build && cd ./build
 
-cmake .. && make
+cmake ..  1>/dev/null || exit 1;
+make 1>/dev/null || exit 1;
 
 cd ../
 

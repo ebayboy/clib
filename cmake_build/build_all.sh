@@ -14,12 +14,17 @@
 
 #1. build libhello.so
 echo "1. building libhello.so ..."
-cd ./lib && ./build.sh 1>/dev/null && cd ../
+cd ./lib
+./build.sh 1>/dev/null  || { echo "Error: build lib error, exit!"; exit 1; };
+cd ../
 
 #2. build test demo
 echo "2. building test demo ..."
-cd ./test && ./build.sh 1>/dev/null && cd ../
+cd ./test 
+./build.sh 1>/dev/null || { echo "Error: build demo error, exit!"; exit 1; };
+cd ../
 
+#3. cp demo
 cp ./test/build/src/main  . -af
 
 echo "build complete!"

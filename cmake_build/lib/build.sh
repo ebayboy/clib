@@ -11,11 +11,13 @@
 #* 
 #**************************************************************************/ 
 
-rm ./build -rf && mkdir ./build && cd ./build
+rm ./build -rf 
+mkdir ./build 
+cd ./build
 
-cmake -DCMAKE_INSTALL_PREFIX=/usr ..
-make
-make install
+cmake -DCMAKE_INSTALL_PREFIX=/usr ..  1>/dev/null || exit 1;
+make 1>/dev/null || exit 1;
+make install 1>/dev/null || exit 1;
 
 cd ../
 
